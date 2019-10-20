@@ -110,3 +110,60 @@ app.listen(config.port, function() {
   console.log(`Listening http://localhost:${config.port}`);
 });
 ```
+
+## Creando un CRUD con los verbos HTTP
+
+Con los verbos http podemos realizar las funcionalidades de un CRUD.
+
+| Funcion | Verbo  |
+| ------- | ------ |
+| CREATE  | POST   |
+| READ    | GET    |
+| UPDATE  | PUT    |
+| DELETE  | DELETE |
+
+Para la creacion de nuestra ruta solo implementamos el verbo GET, para implementar los otros 3 restantes es muy sencillo:
+
+```javascript
+//Creamos un usuario con el metodo post
+router.post('/', async function(req, res, next) {
+  try {
+    const createdUserId = await Promise.resolve(usersMock[0].id);
+
+    res.status(201).json({
+      data: createdUserId,
+      message: 'Usuario creado'
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+//Actualizamos un usuario por su id con el metodo PUT
+router.put('/:userId', async function(req, res, next) {
+  try {
+    const updatedUserId = await Promise.resolve(usersMock[0].id);
+
+    res.status(200).json({
+      data: updatedUserId,
+      message: 'Usuario actualizado'
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+//Actualizamos un usuario por su id con el metodo PUT
+router.delete('/:userId', async function(req, res, next) {
+  try {
+    const deletedUserId = await Promise.resolve(usersMock[0].id);
+
+    res.status(200).json({
+      data: deletedUserId,
+      message: 'Usuario eliminado'
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+```
