@@ -1,5 +1,5 @@
 //Dotenv es un paquete que nos ayuda a configurar nuestras variables de entorno
-require('dotenv');
+require('dotenv').config();
 
 //El objeto config nos ayudara a definir todas las variables de entorno
 //necesarias para configurar nuestro servidor
