@@ -167,3 +167,18 @@ router.delete('/:userId', async function(req, res, next) {
   }
 });
 ```
+
+## Clean Architecture
+
+La arquitectura clean se divide en 3 capas para poder manejar mejor el flujo de datos en nuestro backend, el objetivo es separar en estas capas las responsabilidades que tiene cada seccion del codigo:
+
+![Arquitectura Clean](https://www.dropbox.com/s/n06gjhvukutegr1/clean%20architecture.png?raw=1)
+
+- **Controladores:** Es la capa encargada de saber como se reciben los parametros de los requests, y estos como los envia a la capa de servicios.
+
+- **Servicios:** Se enfoca a manejar la logica de negocio de nuestra apliacion.
+
+- **Librerias:** Es la capa donde se declarara toda la logica encargada de hacer conexiones a bases de datos o a servicios en la nube.
+
+
+
