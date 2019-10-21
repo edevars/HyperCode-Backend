@@ -11,9 +11,13 @@ const { config } = require('./config');
 //Importamos nuestra API de usuarios
 const usersApi = require('./routes/users');
 
+
+//Usa el middleware BodyParser
+app.use(express.json());
 //Hacemos uso de la API pasando como parametro
 //nuestra apliacicon de express
 usersApi(app);
+
 
 app.listen(config.port, function() {
   console.log(`Listening http://localhost:${config.port}`);
