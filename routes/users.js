@@ -44,7 +44,7 @@ function usersApi(app) {
     const { body: user } = req;
     try {
       //Consumimos nuestro servicio para crear un nuevo usuario
-      const createdUserId = await usersService.createUser(user);
+      const createdUserId = await usersService.createUser({user});
 
       res.status(201).json({
         data: createdUserId,

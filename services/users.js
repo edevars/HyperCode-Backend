@@ -22,7 +22,7 @@ class UsersService {
   }
 
   async updateUser({ userId, user = {} }) {
-    const updatedUserId = await this.mongoDB.get(this.collection, userId, user);
+    const updatedUserId = await this.mongoDB.update(this.collection, userId, user);
     return updatedUserId;
   }
 
