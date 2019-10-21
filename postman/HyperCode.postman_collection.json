@@ -30,6 +30,34 @@
 					"response": []
 				},
 				{
+					"name": "READ One User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/users/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "CREATE Users",
 					"request": {
 						"method": "POST",
@@ -43,15 +71,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"username\": \"uwilmore0\",\n    \"email\": \"ekittley0@reference.com\",\n    \"password\": \"kHfS7AzpK3\"\n}"
+							"raw": "{\n    \"username\": \"uwilmore0\",\n    \"email\": \"ekittley0@reference.com\",\n    \"password\": \"kHfS7AzpK3\"\n}"
 						},
 						"url": {
-							"raw": "{{URL}}/users",
+							"raw": "{{URL}}/users/",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"users"
+								"users",
+								""
 							]
 						}
 					},
@@ -71,22 +100,28 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"username\": \"uwilmore0\",\n    \"email\": \"ekittley0@reference.com\",\n    \"password\": \"kHfS7AzpK3\"\n}"
+							"raw": "{\n    \"username\": \"edevars\",\n    \"email\": \"ekittley0@reference.com\",\n    \"password\": \"kHfS7AzpK3\"\n}"
 						},
 						"url": {
-							"raw": "{{URL}}/users/1?",
+							"raw": "{{URL}}/users/:id?",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"users",
-								"1"
+								":id"
 							],
 							"query": [
 								{
 									"key": "userId",
 									"value": "1",
 									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
 								}
 							]
 						}
@@ -103,19 +138,25 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/users/1?",
+							"raw": "{{URL}}/users/:id?",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"users",
-								"1"
+								":id"
 							],
 							"query": [
 								{
 									"key": "userId",
 									"value": "1",
 									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
 								}
 							]
 						}
